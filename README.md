@@ -1,28 +1,4 @@
----
-license: mit
-language:
-- en
-pipeline_tag: text-classification
-widget:
-- text: "Title: File server down Description: The internet is back up after we rebooted everything but nobody can access the file server now, please help."
-- text: "Title: New mouse please Description: My mouse is acting up a little bit could I get a new one please?"
-- text: "Title: Internet outage Description: The whole internet is down for everyone in the office"
----
-# Model Name: DavinciTech/BERT_Categorizer
 
-## Model Description
-
-This model is designed to categorize IT support tickets into ITIL-standard categories to streamline ticket routing and resolution in the IT support process. It's based on BERT, a transformer-based model that has been widely successful for a variety of NLP tasks. This model takes the text of an it support ticket as input in the format `"Title: <title text> Description: <body text>"`, and returns values for ITIL Impact, Urgency, and Type.
-
-### How to Use
-
-The DavinciTech/BERT_Categorizer can be used directly after installation via the Hugging Face `transformers` library.  The model returns a packed array of predictions for all the categories which need to be decoded to find the most likely candidate for each class.  Please see the included 'inference.py' script for an example of how to use the model and decode the output.
-
-### Intended Uses and Limitations
-
-This model is intended for use in IT support ticket classification systems that align with the ITIL framework. While it has been fine-tuned to categorize various standard IT support requests, users should be aware of the potential limitations in context understanding and the need for additional fine-tuning when adapting to specific IT environments.
-
-We trained this model at Davinci Technology Solutions to automate the first triage steps in our IT helpdesk. Davinci Technology Solutions is a Managed Service Provider supporting small businesses in Canada with their technology needs. The training data used to train this model reflects this context.
 
 ### Training Data
 
