@@ -1,0 +1,12 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/glb-ms-wgh-app-dev/automaticticketclassifier', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/glb-ms-wgh-app-dev/automaticticketclassifier']
+ 
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args: ['gcloud', 'run', 'deploy', 'automaticticketclassifier',
+           '--image', 'gcr.io/glb-ms-wgh-app-dev/automaticticketclassifier',
+           '--platform', 'managed',
+           '--region', 'europe-west3', 
+           '--allow-unauthenticated']
